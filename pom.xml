@@ -12,28 +12,15 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <sonar.sources>.</sonar.sources>
   </properties>
-
+  <!--
+  For use with Jenkins-maven-slave /!\ Maven 3.1 required. Currently Maven 3.0.5 installed on
+  jenkins-maven-slave-rhel7 image used by Openshift Jenkins image.
   <build>
   	<plugins>
-      <plugin>
-        <groupId>com.github.klieber</groupId>
-        <artifactId>phantomjs-maven-plugin</artifactId>
-        <version>0.4</version>
-          <executions>
-              <execution>
-                  <goals>
-                      <goal>install</goal>
-                  </goals>
-              </execution>
-          </executions>
-          <configuration>
-              <version>1.9.7</version>
-          </configuration>
-      </plugin>
   		<plugin>
   			<groupId>com.github.searls</groupId>
   			<artifactId>jasmine-maven-plugin</artifactId>
-  			<version>1.1.0</version>
+  			<version>2.2</version>
   			<executions>
   				<execution>
   					<goals>
@@ -42,6 +29,9 @@
   				</execution>
   			</executions>
   			<configuration>
+          <phantomjs>
+            <version>2.1.1</version>
+          </phantomjs>
           <jsTestSrcDir>spec</jsTestSrcDir>
           <specIncludes>
             <include>**/*spec.js</include>
@@ -52,5 +42,6 @@
   		</plugin>
   	</plugins>
   </build>
+  -->
 
 </project>
